@@ -15,7 +15,6 @@ export function SnackCard({ snack }: SnackCardProps) {
   const { toast } = useToast();
 
   const handleFeedback = (feedback: 'liked' | 'disliked') => {
-    // In a real app, this would store preferences.
     console.log(`User ${feedback} ${snack.snackSuggestion}`);
     toast({
       title: "Feedback Received!",

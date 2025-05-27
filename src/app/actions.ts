@@ -23,7 +23,6 @@ export async function getSnackForMoodAction(moodDescription: string): Promise<{ 
     console.error("Error in getSnackForMoodAction calling textMoodToSnack:", e);
     const rawErrorMessage = e instanceof Error ? e.message : "An underlying AI service call failed.";
     
-    // Guide user to check API key / Google Cloud project configuration for any AI error
     return { error: `Failed to get snack suggestion due to an issue with the AI service. This could be related to your API key or Google Cloud project configuration. Please verify them. (Details: ${rawErrorMessage.substring(0, 150)})` };
   }
 }

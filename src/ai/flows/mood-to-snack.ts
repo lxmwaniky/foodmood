@@ -34,7 +34,7 @@ const prompt = ai.definePrompt({
   name: 'moodToSnackPrompt',
   input: {schema: MoodToSnackInputSchema},
   output: {schema: MoodToSnackOutputSchema},
-  prompt: `You are a snack suggestion expert. Given a user's mood and a list of available snacks, you will suggest a snack that matches their emotional state.
+  prompt: `You are a snack suggestion expert. Given a user's mood and a list of available snacks, you will suggest a kenyan snack that matches their emotional state.
 
 Mood: {{{mood}}}
 Available Snacks: {{{availableSnacks}}}
