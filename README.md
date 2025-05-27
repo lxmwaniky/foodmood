@@ -15,6 +15,7 @@ Welcome to Food Mood, an application that suggests snacks based on how you're fe
 -   **Frontend:** Next.js (App Router), React, TypeScript
 -   **Styling:** Tailwind CSS, ShadCN UI
 -   **AI Integration:** Genkit, Google AI (Gemini)
+-   **Deployment:** Firebase App Hosting
 -   **Development:** Node.js
 
 ## 🚀 Getting Started
@@ -25,8 +26,11 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 -   Node.js (v20.x or later recommended)
 -   npm (comes with Node.js)
+-   Firebase CLI (install with `npm install -g firebase-tools`)
+-   A Google Cloud Project with the "Generative Language API" (or "Vertex AI API") enabled and billing active.
+-   A Firebase project.
 
-### Installation & Setup
+### Installation & Setup (Local Development)
 
 1.  **Clone the repository:**
     ```bash
@@ -40,12 +44,12 @@ Follow these instructions to get a copy of the project up and running on your lo
     ```
     (or `npm ci` for a cleaner install based on `package-lock.json`)
 
-3.  **Set up Environment Variables:**
+3.  **Set up Local Environment Variables:**
     Create a `.env` file in the root of your project and add your Google AI API key:
     ```env
-    GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+    GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
     ```
-    Replace `YOUR_GOOGLE_API_KEY` with your actual API key from Google AI Studio or Google Cloud Console. Ensure the "Generative Language API" or "Vertex AI API" is enabled in your Google Cloud project and billing is active.
+    Replace `YOUR_GEMINI_API_KEY` with your actual API key. This file is for **local development only** and should **not** be committed to Git (ensure `.env` is in your `.gitignore` file).
 
 4.  **Run the Development Servers:**
     You need to run two development servers concurrently for the full application experience:
@@ -76,22 +80,6 @@ In the project directory, you can run:
 -   `npm run typecheck`: Runs the TypeScript compiler to check for type errors.
 -   `npm run genkit:dev`: Starts the Genkit development server.
 -   `npm run genkit:watch`: Starts the Genkit development server and watches for file changes.
-
-## 🚀 Deployment
-
-This application is configured for deployment to **Firebase App Hosting**. Connect your GitHub repository to a Firebase App Hosting backend in the Firebase console. Pushes to the connected branch will trigger automatic builds and deployments.
-
-The `apphosting.yaml` file in the root directory contains basic configuration for App Hosting.
-
-## CI/CD
-
-This project includes a GitHub Actions workflow for Continuous Integration (CI) located at `.github/workflows/ci.yml`. This workflow automatically runs on every push and pull request to the `main` branch to:
-- Install dependencies
-- Run the linter
-- Perform type checking
-- Build the project
-
-This helps ensure code quality and that the application builds successfully before deployment.
 
 ## ©️ Copyright
 
