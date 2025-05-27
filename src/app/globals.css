@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 40 67% 96%; /* #FAF7F0 - Very Light Yellow */
+    --foreground: 30 25% 25%; /* #5C514C - Dark Warm Gray/Brown */
+
+    --card: 40 60% 93%; /* #F5F2E9 */
+    --card-foreground: 30 25% 25%; /* #5C514C */
+
+    --popover: 40 60% 93%; /* #F5F2E9 */
+    --popover-foreground: 30 25% 25%; /* #5C514C */
+
+    --primary: 39 100% 68%; /* #FFC15E - Warm Yellow */
+    --primary-foreground: 30 25% 20%; /* #4A3B31 - Darker Warm Brown for contrast on yellow */
+
+    --secondary: 39 90% 80%; /* #FFDDAA - Lighter version of primary */
+    --secondary-foreground: 30 25% 20%; /* #4A3B31 */
+
+    --muted: 40 50% 90%; /* #F2EFE6 */
+    --muted-foreground: 30 25% 45%; /* #857B75 */
+
+    --accent: 36 100% 50%; /* #FF9800 - Light Orange */
+    --accent-foreground: 0 0% 100%; /* White for contrast on orange */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 40 40% 88%; /* #EBE8DE */
+    --input: 40 40% 90%; /* #EDEAE3 */
+    --ring: 36 100% 50%; /* Accent color for rings */
+
+    --radius: 0.5rem;
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    --sidebar-background: 40 65% 94%;
+    --sidebar-foreground: 30 25% 25%;
+    --sidebar-primary: 39 100% 68%;
+    --sidebar-primary-foreground: 30 25% 20%;
+    --sidebar-accent: 36 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 40 40% 88%;
+    --sidebar-ring: 36 100% 50%;
+  }
+
+  .dark {
+    --background: 30 10% 12%; /* #24211F - Very Dark Warm Gray/Brown */
+    --foreground: 40 40% 85%; /* #DAD4C3 - Light Warm Gray/Yellow */
+
+    --card: 30 10% 15%; /* #2B2927 */
+    --card-foreground: 40 40% 85%; /* #DAD4C3 */
+
+    --popover: 30 10% 15%; /* #2B2927 */
+    --popover-foreground: 40 40% 85%; /* #DAD4C3 */
+
+    --primary: 39 100% 68%; /* #FFC15E - Warm Yellow (same as light) */
+    --primary-foreground: 30 25% 20%; /* #4A3B31 (same as light) */
+
+    --secondary: 39 80% 50%; /* #CC8F3D - Darker shade of primary */
+    --secondary-foreground: 0 0% 100%; /* White */
+
+    --muted: 30 10% 20%; /* #383533 */
+    --muted-foreground: 40 30% 65%; /* #B0A896 */
+
+    --accent: 36 100% 50%; /* #FF9800 - Light Orange (same as light) */
+    --accent-foreground: 0 0% 100%; /* White (same as light) */
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 10% 25%; /* #423E3A */
+    --input: 30 10% 22%; /* #3D3A37 */
+    --ring: 36 100% 50%; /* Accent color for rings */
+    
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    --sidebar-background: 30 10% 14%;
+    --sidebar-foreground: 40 40% 85%;
+    --sidebar-primary: 39 100% 68%;
+    --sidebar-primary-foreground: 30 25% 20%;
+    --sidebar-accent: 36 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 30 10% 25%;
+    --sidebar-ring: 36 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
