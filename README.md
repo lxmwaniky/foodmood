@@ -1,7 +1,7 @@
 
 # Food Mood 🍪
 
-Welcome to Food Mood, an application that suggests snacks based on how you're feeling! Describe your mood, and let our AI-powered assistant find the perfect treat for you.
+Welcome to Food Mood, an application that suggests kenyan snacks and street food based on how you're feeling! Describe your mood, and let our AI-powered assistant find the perfect treat for you.
 
 ## ✨ Features
 

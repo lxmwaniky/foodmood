@@ -10,7 +10,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: 'Food Mood',
-  description: 'Get snack suggestions based on your mood!',
+  description: 'Get snack/street meal suggestions based on your mood!',
 };
 
 export default function RootLayout({

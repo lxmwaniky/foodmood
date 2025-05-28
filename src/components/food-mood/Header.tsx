@@ -10,7 +10,7 @@ export function Header() {
         </h1>
       </div>
       <p className="mt-2 text-lg text-muted-foreground">
-        Discover the perfect snack for how you feel.
+        Discover the perfect snack/street meal for how you feel.
       </p>
     </header>
   );
