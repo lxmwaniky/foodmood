@@ -1,7 +1,7 @@
 "use server";
 
 /**
- * @fileOverview Suggests a snack based on the user's mood described in text, specializing in Kenyan options.
+ * @fileOverview Suggests a snack based on the user's mood described in text, specializing in n options.
  *
  * - textMoodToSnack - A function that suggests snacks based on the user's mood described in text.
  * - TextMoodToSnackInput - The input type for the textMoodToSnack function.
@@ -22,10 +22,10 @@ const TextMoodToSnackOutputSchema = z.object({
   mood: z.string().describe("The analyzed mood of the user."),
   snackSuggestion: z
     .string()
-    .describe("A suggested Kenyan snack or street food based on the mood."),
+    .describe("A suggested n snack or street food based on the mood."),
   reason: z
     .string()
-    .describe("The reason why the Kenyan snack is suggested for the mood."),
+    .describe("The reason why the n snack is suggested for the mood."),
 });
 export type TextMoodToSnackOutput = z.infer<typeof TextMoodToSnackOutputSchema>;
 
@@ -39,21 +39,20 @@ const prompt = ai.definePrompt({
   name: "textMoodToSnackPrompt",
   input: { schema: TextMoodToSnackInputSchema },
   output: { schema: TextMoodToSnackOutputSchema },
-  prompt: `
-You are a culinary expert and mood-based snack recommender with deep knowledge of Kenyan snacks and street foods. Your goal is to interpret a person's emotional state and suggest one Kenyan snack or street food that best fits their mood. You should respond with empathy, cultural awareness, and creativity.
+  prompt: `You are a snack and street food expert who understands how different foods can affect moods and emotions. Your expertise lies in recommending delicious snacks that perfectly match people's emotional states.
 
-Analyze the emotional tone of the user’s mood description and match it with a snack that complements or balances that feeling. Consider taste, texture, comfort factor, cultural meaning, or energy boost as factors in your recommendation.
+Considering this mood description: {{{moodDescription}}}
 
-Here are examples of popular Kenyan snacks and street foods to consider: mutura, smokies, mayai pasua, mahamri, kaimati, viazi karai, samosas, chapati, mandazi, mkate mayai, bhajias, kachumbari, boiled maize, roasted cassava, etc.
+Please analyze the mood and suggest ONE perfect snack or street food that would enhance or complement their emotional state. Consider factors like:
+- The comfort level the food provides
+- The universal appeal of the snack
+- The textures and flavors that match the emotional state
+- Whether the mood calls for something energizing or soothing
 
-Respond with:
-- The **interpreted mood** (summarized)
-- A **snack suggestion**
-- A **reason** linking the snack to the mood, considering comfort, energy, flavor, or emotional relief.
-
-Mood description: {{{moodDescription}}}
-
-Be warm, thoughtful, and insightful in your response.
+Provide:
+1. A clear analysis of their mood
+2. A specific snack or street food recommendation
+3. A thoughtful explanation connecting the mood to the recommended snack's characteristics
 `,
 });
 

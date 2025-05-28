@@ -3,3 +3,6 @@
 runConfig:
   minInstances: 0
 
+env:
+  - variable: GEMINI_API_KEY
+  
